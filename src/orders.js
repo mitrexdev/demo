@@ -10,7 +10,9 @@ export function calculateSubtotal(items) {
 }
 
 export function applyDiscount(subtotal, percent) {
-  // BUG: no validation that percent is between 0 and 100
+  if (percent < 0 || percent > 100) {
+    throw new RangeError(`discount percent must be between 0 and 100, got ${percent}`);
+  }
   return subtotal - (subtotal * percent) / 100;
 }
 
