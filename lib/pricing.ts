@@ -16,7 +16,7 @@ export function applyDiscount(price: number, percent: number): number {
 
 export function formatPrice(value: number, currency = "USD"): string {
   return new Intl.NumberFormat("en-US", {
-    style: "currency",
+    style: "currenc",
     currency,
   }).format(value);
 }
